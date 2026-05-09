@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCC | Amar Singh Real Estate Consulting Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Public+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        body, p, span, button { 
+            font-family: 'Public Sans', sans-serif !important; 
+            background-color: #000000; 
+            color: #fdfdfd; 
+            margin: 0; 
+            overflow-x: hidden;
+            scroll-behavior: smooth; 
+        }
+        h1, h2, h3 { 
+            font-family: 'Tenor Sans', sans-serif !important; 
+            font-weight: 300 !important;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .arcc-logo { 
+            font-family: 'Times New Roman', Times, serif !important; 
+            font-weight: 500; 
+            color: #EBB02A; 
+            letter-spacing: 0.02em; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+        }
+        .nav-link { 
+            font-size: 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.25em; 
+            color: #777; 
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+        }
+        .nav-link:hover, .nav-link.active { color: #EBB02A; }
+
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+        }
+
+        .page-content { display: none; animation: fadeIn 0.8s ease-out forwards; }
+        .page-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover { border-color: rgba(235, 176, 42, 0.3); }
+
+        .address-block {
+            border-left: 1px solid rgba(235, 176, 42, 0.2);
+            padding-left: 24px;
+            transition: border-color 0.4s ease;
+        }
+        .address-block:hover {
+            border-left-color: #EBB02A;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="flex justify-between items-center px-12 py-10 sticky top-0 bg-black/90 backdrop-blur-md z-50">
+        <div class="flex items-center gap-6" onclick="showPage('home')">
+            <span class="text-3xl arcc-logo leading-none">ARCC</span>
+            <div class="hidden lg:flex flex-col border-l border-white/10 pl-6">
+                <span class="text-[9px] text-white/40 uppercase tracking-[0.3em]">Amar Singh Real Estate</span>
+                <span class="text-[9px] text-white/20 uppercase tracking-[0.3em]">Consulting Company</span>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-12 items-center">
+            <span onclick="showPage('home')" class="nav-link">Home</span>
+            <span onclick="showPage('about')" class="nav-link">About</span>
+            <span onclick="showPage('services')" class="nav-link">Services</span>
+            <span onclick="showPage('contact')" class="nav-link border border-white/10 px-6 py-2 hover:border-[#EBB02A]">Contact Us</span>
+        </div>
+    </nav>
+
+    <!-- PAGE: HOME -->
+    <main id="home" class="page-content active">
+        <section class="relative h-[85vh] flex items-center px-12 overflow-hidden">
+            <div class="relative z-10 max-w-4xl">
+                <h1 class="text-5xl md:text-7xl text-white leading-[1.1] mb-10">
+                    Defining Property <br><span class="text-white/30 italic">Delivering Legacy</span>
+                </h1>
+                <div class="flex gap-8">
+                    <button onclick="showPage('services')" class="bg-[#EBB02A] text-black px-12 py-5 text-[11px] font-bold tracking-[0.3em] uppercase transition hover:bg-white">Our Expertise</button>
+                    <button onclick="showPage('contact')" class="border border-white/20 text-white px-12 py-5 text-[11px] font-bold tracking-[0.3em] uppercase transition hover:border-[#EBB02A]">Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE: ABOUT -->
+    <main id="about" class="page-content py-24 px-12">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl text-white mb-2 tracking-widest">Heritage & Scale</h2>
+            <p class="text-[#EBB02A] text-[10px] uppercase tracking-[0.5em] mb-16">Establishing dominance across Maharashtra</p>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="space-y-6 text-white/70 text-base leading-relaxed font-light">
+                    <p>We are a specialized real estate firm focusing on the agricultural land and farm sector one of the most challenging segments in the industry.</p>
+                    <p>Our core strength lies in sourcing large-scale land parcels and managing complex acquisitions at the cheapest possible price points.</p>
+                    <p>With an in-house team boasting 40+ years of experience, we have navigated every market cycle, ensuring stable growth for our clients.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-white text-sm tracking-widest mb-6 border-b border-white/10 pb-4">Network Footprint</h3>
+                    <ul class="space-y-4 text-sm text-white/50 font-light">
+                        <li>• 100+ Professional Agent Network</li>
+                        <li>• Presence in 1,000+ Villages across Maharashtra</li>
+                        <li>• Nagpur & 250km Surrounding Region</li>
+                        <li>• Recent Expansion into Mumbai & Pune</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE: SERVICES -->
+    <main id="services" class="page-content py-24 px-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl text-white mb-16 tracking-widest text-center">Core Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Land Purchase & Selling</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">Strategic sourcing and acquisition of agricultural land at market-leading prices.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Land NA Conversion</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">Managing complex regulatory protocols for Non-Agricultural conversion in Maharashtra.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Profit Maximization</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">Advanced strategies to extract peak ROI from raw agricultural and farm holdings.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Development Funding</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">Bespoke guidance on securing funding for large-scale land development projects.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Strategic Sourcing</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">Bespoke land identification based on specific investment benchmarks across our village network.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="text-[#EBB02A] text-sm mb-4">Asset Consultancy</h3>
+                    <p class="text-xs text-white/40 leading-relaxed">40+ years of expertise in managing land boundary, possession, and legal complexities.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CONTACT PAGE -->
+    <main id="contact" class="page-content py-24 px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-20 items-start">
+                
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl text-white mb-4 tracking-widest">Connect</h2>
+                    <p class="text-white/40 text-[10px] uppercase tracking-[0.4em] mb-12 italic">Direct Consultation</p>
+                    
+                    <div class="mb-10">
+                        <p class="text-[9px] text-white/30 uppercase tracking-[0.3em] mb-2 font-medium">Contact Line</p>
+                        <p class="text-[#EBB02A] text-3xl font-light mb-6">+91 9270407778</p>
+                        
+                        <p class="text-[9px] text-white/30 uppercase tracking-[0.3em] mb-2 font-medium">Email Inquiry</p>
+                        <p class="text-white text-lg font-light lowercase tracking-wider">info@arccnagpur.com</p>
+                    </div>
+
+                    <div class="glass-card py-6 px-8 inline-block">
+                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Appointment Protocol</p>
+                        <p class="text-white/40 text-[11px] leading-relaxed italic">Please call before visiting</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-12 pt-4">
+                    
+                    <div class="address-block">
+                        <h3 class="text-white text-xs tracking-[0.3em] uppercase mb-6 font-medium">Nagpur Branch</h3>
+                        <p class="text-white/50 text-[13px] leading-[1.8] font-light">
+                            1, Danaganj Square, Lakadganj,<br>
+                            Nagpur 440008
+                        </p>
+                    </div>
+
+                    <div class="address-block">
+                        <h3 class="text-white text-xs tracking-[0.3em] uppercase mb-6 font-medium">Business Lounge</h3>
+                        <p class="text-white/50 text-[13px] leading-[1.8] font-light">
+                            Regus K10 Corporate, 2nd-4th Floor,<br>
+                            K10, Wardha Rd, Jai Prakash Nagar,<br>
+                            New Sneh Nagar, Nagpur,<br>
+                            Maharashtra 440015
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-2 pt-12 mt-12 border-t border-white/5">
+                        <div class="flex flex-wrap gap-x-16 gap-y-6 items-center">
+                            <div>
+                                <p class="text-[9px] text-white/20 uppercase tracking-[0.5em] mb-1">Regional Presence</p>
+                                <p class="text-white/60 text-xs tracking-widest uppercase">Nagpur | Mumbai | Pune</p>
+                            </div>
+                            <div>
+                                <p class="text-[9px] text-white/20 uppercase tracking-[0.5em] mb-1">Reach</p>
+                                <p class="text-white/60 text-xs tracking-widest uppercase">1000+ Villages</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function initCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+            }
+            update() {
+                this.x += this.speedX; this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0; if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0; if (this.y < 0) this.y = canvas.height;
+            }
+            draw() { ctx.fillStyle = 'rgba(235, 176, 42, 0.4)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+        }
+        function createParticles() {
+            particles = []; const count = (canvas.width * canvas.height) / 15000;
+            for (let i = 0; i < count; i++) { particles.push(new Particle()); }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, index) => {
+                p.update(); p.draw();
+                for (let j = index + 1; j < particles.length; j++) {
+                    const dx = p.x - particles[j].x; const dy = p.y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.strokeStyle = `rgba(235, 176, 42, ${0.1 * (1 - dist/150)})`; ctx.lineWidth = 0.5;
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', () => { initCanvas(); createParticles(); });
+        initCanvas(); createParticles(); animate();
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            pages.forEach(page => page.classList.remove('active'));
+            navLinks.forEach(link => {
+                const linkText = link.innerText.toLowerCase().replace(' ', '');
+                if(linkText === pageId.toLowerCase() || (pageId === 'contact' && linkText === 'contactus')) { link.classList.add('active'); }
+                else { link.classList.remove('active'); }
+            });
+            const activePage = document.getElementById(pageId);
+            if (activePage) activePage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
